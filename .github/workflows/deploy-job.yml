@@ -14,4 +14,5 @@ jobs:
         run: rm -rf /var/www/backend/*
       - name: copy
         run: cp -r ./* /var/www/backend/
-    
+      - name: restart PM2
+        run: pm2 restart /var/www/backend/index.js

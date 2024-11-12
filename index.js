@@ -89,6 +89,10 @@ app.post('/api/auth/signin', async (req, res) => {
     })
 })
 
+app.post('/api/ping', async (req, res) => {
+    return res.send('pong')
+})
+
 app.post('/api/auth/signup', (req, res) => {
     const { password, username } = req.body
     db.all(`SELECT * FROM users WHERE name=?`, [username], (error, users) => {
