@@ -1,0 +1,17 @@
+name: Deploy job
+on:
+  push:
+    branches: ["main"]
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux, x64]
+    steps:
+      - name: cd into repo
+        uses: actions/checkout@v3
+      - name: install dependencies
+        run: bun install
+      - name: remove old files
+        run: rm -rf /var/www/backend/*
+      - name: copy
+        run: cp -r ./* /var/www/backend/
+    
