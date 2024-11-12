@@ -4,7 +4,7 @@ on:
     branches: ["main"]
 jobs:
   deploy:
-    runs-on: [self-hosted, linux, x64]
+    runs-on: [self-hosted]
     steps:
       - name: cd into repo
         uses: actions/checkout@v3
