@@ -89,7 +89,7 @@ app.post('/api/auth/signin', async (req, res) => {
     })
 })
 
-app.post('/api/ping', async (req, res) => {
+app.get('/api/ping', async (req, res) => {
     return res.send('pong')
 })
 
